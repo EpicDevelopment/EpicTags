@@ -65,7 +65,7 @@ public class AdminTagComplete implements TabCompleter {
                 }
             }
 
-            if (args[0].equalsIgnoreCase("remove")) {
+            if (args[0].equalsIgnoreCase("revoke")) {
                 List<String> tag = tags.tagList();
                 for (String s : tag) {
                     list.add(s);
