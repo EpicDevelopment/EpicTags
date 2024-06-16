@@ -97,7 +97,7 @@ public class AdminTagCommand implements CommandExecutor {
         }
 
         String tag = args[1].toLowerCase();
-        if (!tags.getTag(tag).isBlank()){
+        if (tags.getTag(tag).isBlank()){
             sender.sendMessage(messages.getMessages("tag-doesnt-exist").replace("%tag%", tag));
             return;
         } else {
