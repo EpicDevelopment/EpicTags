@@ -36,41 +36,6 @@ public class Config {
         return color.c(message);
     }
 
-    public int getValueInt(String key) {
-        try {
-            int message = Integer.parseInt(config.getString(key));
-            return message;
-        } catch (NumberFormatException e) {
-            return 0;
-        }
-    }
-
-    public boolean getValueBoolean(String key) {
-        try {
-            boolean message = Boolean.parseBoolean(config.getString(key));
-            return message;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-    public List<String> getBannedNames() {
-        return config.getStringList("banned-names");
-    }
-
-    public List<String> getArrayValue(String key) {
-        List<String> messages = config.getStringList(key);
-        if (messages == null || messages.isEmpty()) {
-            return new ArrayList<>();
-        }
-
-        List<String> coloredMessages = new ArrayList<>();
-        for (String message : messages) {
-            coloredMessages.add(color.c(message));
-        }
-        return coloredMessages;
-    }
-
     public void reloadConfig() {
         if (configFile == null) {
             configFile = new File(plugin.getDataFolder(), "config.yml");
