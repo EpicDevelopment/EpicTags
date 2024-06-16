@@ -19,6 +19,7 @@ admin-tag-help: |
   &7» &f/admintags &fcreate <##7e8a8f><name> <tag> &8- &fCreate a tag.
   &7» &f/admintags &fdelete <##7e8a8f><name> &8- &fDelete a tag.
   &7» &f/admintags &fgrant <##7e8a8f><player> <tag> &8- &fGrant a player a tag.
+  &7» &f/admintags &frevoke <##7e8a8f><player> <tag> &8- &fRemoves a tag from a player.
   &7» &f/admintags &freload &8- &fReload the plugin messages & configs.
   &7» &f/admintags &fhelp &8- &fGet information about commands.
   &7&m                                                 &7&m
