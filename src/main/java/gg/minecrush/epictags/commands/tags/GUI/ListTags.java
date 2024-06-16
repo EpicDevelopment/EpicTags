@@ -131,4 +131,10 @@ public class ListTags {
 
         player.openInventory(tagsGUI);
     }
+
+    // To do:
+    // Make a better GUI system
+
+    // To test:
+    // Got to test if the arrows actually work
 }
