@@ -30,9 +30,6 @@ public class Tags {
         createConfig();
     }
 
-    public String getFilePath() {
-        return filePath;
-    }
 
     private void createConfig() {
         configFile = new File(plugin.getDataFolder(), filePath);
