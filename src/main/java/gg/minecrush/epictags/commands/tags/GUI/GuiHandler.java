@@ -82,6 +82,9 @@ public class GuiHandler implements Listener {
                         }
                     }
                 }
+
+                // To test:
+                // Got to test if the Clicked arrows actually work
             }
         }
     }
