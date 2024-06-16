@@ -114,3 +114,5 @@ public final class EpicTags extends JavaPlugin {
         }
     }
 }
+
+// Remember to Shade tags plugin
