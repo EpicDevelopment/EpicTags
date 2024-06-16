@@ -1,0 +1,48 @@
+
+admin-tag-success: '&aCreated tag with the name %tag%!'
+admin-tag-deleted: '&aDeleted tag with the name %tag%'
+admin-tag-granted: '&aGranted the %tag% tag to %player%!'
+admin-tag-recieved: '&aYou were granted the %tag% tag!'
+admin-tag-removed: '&aRemoved the %tag% tag from %player%'
+admin-invalid-command: '&cInvalid command: /admintag help.'
+admin-reload-command: '&aConfig, messages & tag database reloaded. (%time%ms)'
+admin-tag-list: |
+  &3&lTAGS LIST
+  &f
+  &7[&b%tags%&7]
+
+admin-tag-help: |
+  &f
+  &7&m                                                 &7&m
+  <##2ebff0>&lADMIN TAGS HELP &7» &fList of commands and arguments
+  &f
+  &7» &f/admintags &fcreate <##7e8a8f><name> <tag> &8- &fCreate a tag.
+  &7» &f/admintags &fdelete <##7e8a8f><name> &8- &fDelete a tag.
+  &7» &f/admintags &fgrant <##7e8a8f><player> <tag> &8- &fGrant a player a tag.
+  &7» &f/admintags &freload &8- &fReload the plugin messages & configs.
+  &7» &f/admintags &fhelp &8- &fGet information about commands.
+  &7&m                                                 &7&m
+  &f
+
+tag-exist: '&cThere is already a tag with the name %tag%!'
+tag-doesnt-exist: '&cThere is no tag with the name %tag%'
+invalid-player: '&cPlayer with the name %player% is not online!'
+no-permission: '&cYou do not have the permission to do that.'
+player-has-tag: '&cError: %player% already has the %tag% tag!'
+player-doesnt-have-tag: '&cError: %player% does not have the %tag% tag!'
+
+tags-gui:
+  close: '&c&lCLOSE'
+  previousPage: '&7Previous page'
+  nextPage: '&7Next page'
+  tag:
+    name: '&a%name%' #Make sure it starts with %name% or it will NOT work.
+    description:
+      - '&f'
+      - '<##e8cb61>❙ &fTag: %tag%'
+      - '<##e8cb61>❙ &fName: %name%'
+      - ' '
+      - '&a%click-to%'
+
+enabled-tag: '&aEnabled the %tag% tag!'
+disabled-tag: '&cDisabled the %tag% tag!'
