@@ -15,6 +15,7 @@ import org.bukkit.entity.Player;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class AdminTagCommand implements CommandExecutor {
@@ -177,7 +178,7 @@ public class AdminTagCommand implements CommandExecutor {
                 sender.sendMessage(messages.getMessages("player-doesnt-have-tag").replace("%tag%", tag).replace("%player%", targetPlayer.getName()));
                 return;
             }
-            if (sqLite.getTag(targetPlayer) == tag){
+            if (Objects.equals(sqLite.getTag(targetPlayer), tag)){
                 sqLite.updateTag(targetPlayer, "");
             }
 
