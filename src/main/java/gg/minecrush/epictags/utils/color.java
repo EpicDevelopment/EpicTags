@@ -1,13 +1,12 @@
 package gg.minecrush.epictags.utils;
 
 import java.util.ArrayList;
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import net.md_5.bungee.api.ChatColor;
 
 public class color {
-    private static final Pattern HEX_PATTERN = Pattern.compile("<##([A-Fa-f0-9]{6})>");
+    private static final Pattern HEX_PATTERN = Pattern.compile("<##([A-Fa-f0-9]{6})>|#([A-Fa-f0-9]{6})");
 
     public static String c(String message) {
         message = message.replace("%nl%", "\n");
@@ -17,7 +16,11 @@ public class color {
         int lastEnd = 0;
         while (matcher.find()) {
             buffer.append(message, lastEnd, matcher.start());
-            buffer.append(hex(matcher.group(1)));
+            if (matcher.group(1) != null) {
+                buffer.append(hex(matcher.group(1)));
+            } else if (matcher.group(2) != null) {
+                buffer.append(hex(matcher.group(2)));
+            }
             lastEnd = matcher.end();
         }
         buffer.append(message, lastEnd, message.length());
@@ -40,7 +43,7 @@ public class color {
         try {
             return ChatColor.of("#" + hexCode).toString();
         } catch (Exception e) {
-            return null;
+            return ""; // or handle the exception as needed
         }
     }
 
@@ -51,7 +54,3 @@ public class color {
         return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 }
-
-
-
-
