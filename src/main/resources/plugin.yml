@@ -2,7 +2,7 @@ name: EpicTags
 version: '${version}'
 main: gg.minecrush.epictags.EpicTags
 api-version: '1.20'
-author: awel, pithony
+author: Minecrush
 
 commands:
   admintags:
