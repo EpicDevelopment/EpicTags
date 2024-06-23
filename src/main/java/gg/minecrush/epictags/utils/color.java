@@ -6,26 +6,17 @@ import java.util.regex.Pattern;
 import net.md_5.bungee.api.ChatColor;
 
 public class color {
-    private static final Pattern HEX_PATTERN = Pattern.compile("<##([A-Fa-f0-9]{6})>|#([A-Fa-f0-9]{6})");
+    private static final Pattern pattern = Pattern.compile("#[a-fA-F0-9]{6}");
 
     public static String c(String message) {
         message = message.replace("%nl%", "\n");
-        Matcher matcher = HEX_PATTERN.matcher(message);
-        StringBuilder buffer = new StringBuilder();
-
-        int lastEnd = 0;
+        Matcher matcher = pattern.matcher(message);
         while (matcher.find()) {
-            buffer.append(message, lastEnd, matcher.start());
-            if (matcher.group(1) != null) {
-                buffer.append(hex(matcher.group(1)));
-            } else if (matcher.group(2) != null) {
-                buffer.append(hex(matcher.group(2)));
-            }
-            lastEnd = matcher.end();
+            String color = message.substring(matcher.start(), matcher.end());
+            message = message.replace(color, ChatColor.of(color) + "");
+            matcher = pattern.matcher(message);
         }
-        buffer.append(message, lastEnd, message.length());
-
-        return ChatColor.translateAlternateColorCodes('&', buffer.toString());
+        return ChatColor.translateAlternateColorCodes('&', message);
     }
 
     public static ArrayList<String> cc(String... texts) {
